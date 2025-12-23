@@ -28,7 +28,6 @@ TaskFlow é uma aplicação completa para gerenciamento de funcionários e solic
 - Spring Boot 3.x
 - Spring Security
 - PostgreSQL 16
-- Liquibase (migrations)
 - Swagger/OpenAPI 3.0
 
 ### Frontend
@@ -269,7 +268,7 @@ taskflow/
 │   ├── Dockerfile
 │   └── collections.http       # Coleção de requisições HTTP
 │
-├── taskflow-frontend/         # Frontend React
+├── taskflow-frontend/         # Frontend React (outro repositorio)
 │   └── taskflow/
 │       ├── src/
 │       ├── public/
