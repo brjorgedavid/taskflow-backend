@@ -1,0 +1,157 @@
+### Login
+POST {{client.['host.url']}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "neymar.junior@example.com",
+  "password": "XXXXXX"
+}
+
+
+### Create employee (com Basic Auth)
+POST {{client.['host.url']}}/employees
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+{
+  "firstName": "Alberto",
+  "lastName": "Mendes",
+  "email": "alberto.mendes@example.com",
+  "role": "EMPLOYEE",
+  "managerId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+}
+
+<> 2025-12-20T143717.403.json
+<> 2025-12-20T143703.403.json
+
+### Update employee
+PATCH {{client.['host.url']}}/employees/0a095e75-2c2e-4ed3-b8e8-ee1b446dd3b2
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+{
+  "firstName": "Jorge",
+  "lastName": "Silva",
+  "email": "jorge@example.com",
+  "role": "ADMIN",
+  "managerId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+}
+
+<> 2025-12-20T121007.403.json
+
+
+### List employees
+GET {{client.['host.url']}}/employees?page=2
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+<> 2025-12-21T122752.200.json
+<> 2025-12-20T145048.200.json
+<> 2025-12-20T143829.200.json
+<> 2025-12-20T143816.200.json
+<> 2025-12-20T143724.200.json
+<> 2025-12-20T121011.403.json
+<> 2025-12-19T151446.200.json
+
+### Employee by ID
+GET {{client.['host.url']}}/employees/30000011-0000-0000-0000-000000000011
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+### Employee by FirstNane
+GET {{client.['host.url']}}/employees/by-first-name/neymar
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+<> 2025-12-20T155026.200.json
+<> 2025-12-20T153030.200.json
+
+### Vacation create
+POST {{client.['host.url']}}/vacations
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+{
+  "startDate": "2026-01-10",
+  "endDate": "2026-01-01",
+  "requestReason": "Christmas Vacation"
+}
+
+<> 2025-12-21T113805.400.json
+<> 2025-12-21T113755.400.json
+
+### Get Vacations
+GET {{client.['host.url']}}/vacations
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+### Delete Vacation
+DELETE {{client.['host.url']}}/vacations/91019bab-d92b-4597-b3e5-f2fb71392106
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+### Get Vacations By Id
+GET {{client.['host.url']}}/vacations/b2a18100-2a4f-41cd-a13a-bb43ba98c3a8
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+### approve Vacation
+PATCH {{client.['host.url']}}/vacations/7b655b2e-e789-4ea7-a3e2-3b647689cc7b/decision
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+{
+  "approved": false,
+  "comment": "Not enough staff available during this period."
+}
+
+<> 2025-12-21T114705.403.json
+<> 2025-12-21T114329.403.json
+<> 2025-12-21T114024.500.json
+<> 2025-12-21T113837.200.json
+<> 2025-12-20T175621.200.json
+<> 2025-12-20T164256.400.json
+<> 2025-12-20T164248.400.json
+<> 2025-12-20T155159.201.json
+<> 2025-12-20T155144.400.json
+<> 2025-12-20T155136.400.json
+<> 2025-12-20T155057.400.json
+<> 2025-12-20T155049.400.json
+<> 2025-12-20T155040.400.json
+<> 2025-12-20T153051.201.json
+<> 2025-12-20T150855.200.json
+<> 2025-12-20T150842.200.json
+<> 2025-12-20T150833.200.json
+<> 2025-12-20T150817.200.json
+<> 2025-12-20T150756.200.json
+<> 2025-12-20T150025.200.json
+<> 2025-12-20T150016.200.json
+<> 2025-12-20T150007.200.json
+<> 2025-12-20T150003.200.json
+<> 2025-12-20T145917.500.json
+<> 2025-12-20T145900.400.json
+<> 2025-12-20T145805.200.json
+<> 2025-12-20T145752.404.json
+
+### Employee by email
+GET {{client.['host.url']}}/employees/by-email/eden.hazard@example.com
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+
+<> f-5.txt
+<> f-4.txt
+<> f-3.txt
+<> f-2.txt
+<> f-1.txt
+<> f.txt
+<> 2025-12-20T121024.404.json
+
+### Delete employee
+DELETE {{client.['host.url']}}/employees/7796aa93-9b51-496e-9c38-a3814910f1f4
+Content-Type: application/json
+Authorization: {{client.['auth.token']}}
+
+<> 2025-12-20T121020.403.json
+<> 2025-12-19T151432.200.json
+<> 2025-12-19T151317.200.json
