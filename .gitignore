@@ -37,3 +37,7 @@ out/
 .vscode/
 /src/main/java/com/taskflow/taskflow/util/GenHash.java
 /SWAGGER_README.md
+
+### Environment Variables ###
+.env
+

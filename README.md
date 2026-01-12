@@ -88,10 +88,13 @@ O projeto inclui um script auxiliar `docker.sh` que facilita o gerenciamento dos
 #### Primeira Execução
 
 ```bash
-# 1. Clone o repositório e navegue até a pasta
-cd taskflow
+# 1. Clone o repositório e navegue até a pasta do backend
+cd taskflow-backend
 
-# 2. Inicie os containers
+# 2. Copie o arquivo .env.example para .env (se necessário)
+cp .env.example .env
+
+# 3. Inicie os containers
 ./docker.sh start
 ```
 
@@ -102,7 +105,14 @@ Aguarde alguns instantes para que todos os serviços sejam iniciados. O backend 
 
 ### Variáveis de Ambiente
 
-O arquivo `.env` na raiz do projeto contém as configurações do Docker Compose
+O arquivo `.env` na pasta `taskflow-backend` contém as configurações do Docker Compose:
+
+```env
+# Database Configuration
+POSTGRES_DB=taskflow
+POSTGRES_USER=taskflow
+POSTGRES_PASSWORD=Sucesso@10
+POSTGRES_PORT=5432
 
 # Spring Boot Configuration
 SPRING_PROFILES_ACTIVE=docker
@@ -111,6 +121,8 @@ SPRING_PROFILES_ACTIVE=docker
 BACKEND_PORT=8080
 FRONTEND_PORT=80
 ```
+
+**Nota**: Um arquivo `.env.example` é fornecido como template. Copie-o para `.env` se necessário.
 
 ## 👥 Dados Iniciais
 
